@@ -1,0 +1,53 @@
+<%- include('./partials/header') %>
+
+<div class="container py-5">
+  <div class="col-sm-12 mx-auto col-md-8 col-lg-5">
+    <h2>Contact us</h2>
+    <p>Leave your information and we will contact you</p>
+
+    <form action="/send-email" method="post">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          value="Francisco Navarrete"
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          value="fnavarrete@voxpop.com.mx"
+        >
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input
+          type="tel"
+          class="form-control"
+          name="phone"
+          value="1234567890"
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea 
+          class="form-control" 
+          rows="3"
+          name="message"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit aperiam quas! Ipsum molestiae beatae vitae, voluptates hic veniam soluta numquam similique eveniet quasi accusantium quo cupiditate maxime laborum voluptas!</textarea>
+      </div>
+
+      <button class="btn btn-primary btn-block">Send</button>
+    </form>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
