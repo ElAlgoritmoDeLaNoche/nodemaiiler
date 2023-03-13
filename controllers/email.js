@@ -1,8 +1,8 @@
 const send_email = require('../functions/send_email')
 
 const home = async (req, res) => {
-  res.render('home')
-  // res.send("welcome API")
+  // res.render('home')
+  res.send("welcome API")
 }
 
 const email = async (req, res) => {
