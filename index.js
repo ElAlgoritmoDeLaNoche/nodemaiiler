@@ -1,7 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const path = require('path')
+const dotenv = require('dotenv')
 const app = express()
+dotenv.config()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -12,6 +13,15 @@ app.use(require('./routes/index'))
 
 app.use(express.static(__dirname, + '/public'))
 
-app.listen(5000, () => {
-  console.log('Server listening on -> http://localhost:5000')
-})
+const PORT = process.env.PORT || 5001
+
+const connect = async () => {
+
+  try {
+    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+  } catch (err) {
+    console.error("Connection to failed", err.message)
+  }
+}
+
+connect()
